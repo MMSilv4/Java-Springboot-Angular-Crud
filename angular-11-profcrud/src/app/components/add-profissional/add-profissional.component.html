@@ -1,0 +1,69 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            required
+            [(ngModel)]="profissional.nome"
+            name="nome"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="enredeco">Endereço</label>
+          <input
+            class="form-control"
+            id="endereco"
+            required
+            [(ngModel)]="profissional.endereco"
+            name="endereco"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input
+              class="form-control"
+              id="telefone"
+              required
+              [(ngModel)]="profissional.telefone"
+              name="telefone"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="celular">Celular</label>
+            <input
+              class="form-control"
+              id="celular"
+              required
+              [(ngModel)]="profissional.celular"
+              name="celular"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="funcao">Função</label>
+            <input
+              class="form-control"
+              id="funcao"
+              required
+              [(ngModel)]="profissional.funcao"
+              name="funcao"
+            />
+          </div>
+  
+        <button (click)="saveProfissional()" class="btn btn-success">Enviar</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Profissional cadastrado com sucesso</h4>
+        <button class="btn btn-success" (click)="newProfissional()">Adicionar</button>
+      </div>
+    </div>
+  </div>
+  

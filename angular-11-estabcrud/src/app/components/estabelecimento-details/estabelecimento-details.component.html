@@ -1,0 +1,58 @@
+<div>
+    <div *ngIf="currentEstabelecimento.id" class="edit-form">
+      <h4> Estabelecimento</h4>
+      <form>
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            [(ngModel)]="currentEstabelecimento.nome"
+            name="nome"
+          />
+        </div>
+        <div class="form-group">
+          <label for="endereco">Endereço</label>
+          <input
+            type="text"
+            class="form-control"
+            id="endereco"
+            [(ngModel)]="currentEstabelecimento.endereco"
+            name="endereco"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input
+              type="text"
+              class="form-control"
+              id="telefone"
+              [(ngModel)]="currentEstabelecimento.telefone"
+              name="telefone"
+            />
+          </div>
+        
+      </form>
+  
+      <button 
+      class="badge badge-danger mr-2"
+      (click)="deleteEstabelecimento()">
+        Deletar
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateEstabelecimento()"
+      >Atualizar</button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentEstabelecimento.id">
+      <br />
+      <p>Estabelecimento inacessível!</p>
+    </div>
+  </div>
+  
